@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Roboto;
+    src: url('font/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: 'Nunito';
+    src: url('font/Nunito-Medium.ttf');
+}
+body {
+    font-family: 'Nunito';
+    background: linear-gradient(to right,white,#ccc);
+}
+#degree {
+    font-size: 100px;
+}
+
+
+@media(min-width: 575px) {
+    .atmosphere-options > h5 {
+        font-size: 25px !important;
+    }
+    #degree {
+        font-size: 140px;
+    }
+
+    .atmosphere-options > p {
+        font-size: 16px !important;
+    }
+}
+
+
+@media(min-width: 991px) {
+    .atmosphere-options > h4 {
+        font-size: 25px !important;
+    }
+    #degree {
+        font-size: 200px;
+    }
+
+    .atmosphere-options > p {
+        font-size: 16px !important;
+    }
+}

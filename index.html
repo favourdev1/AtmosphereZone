@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atmosphere Zone</title>
+
+    <link
+      rel="stylesheet"
+      href="vendor/twbs/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="vendor/boxicons-2.1.4/boxicons-2.1.4/css/boxicons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body class="">
+    <div class="vh-100 container">
+      <div class="container py-3 border-bottom">
+        <div class="col d-flex justify-content-between align-items-center">
+          <h3>Atmosphere Zone</h3>
+          <i class="bx bx-menu bx-lg"></i>
+        </div>
+      </div>
+
+      <div class="col h-75 pt-5 temp-container">
+        <div class="h-100 row row-cols row-cols-1 row-cols-sm-2 flex-reverse  justify-content-center">
+          <div class="col">
+            <div class="col" py-3 px-3>
+              <h1>Lagos, Nigeria</h1>
+              <p id="date">DateTIme</p>
+            </div>
+            <h1 id="degree">31 &deg;</h1>
+          </div>
+          <div class="col text-center">
+            <i class="bx bx-cloud bx-lg"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-cols border-top pt-3 gx-2 gy-3">
+        <div class="col my-3">
+          <div class="col atmosphere-options text-center border-end">
+            <h5 class="fw-lighter text-muted">Wind</h5>
+            <p class="fw-bold">34m/s</p>
+          </div>
+        </div>
+        <div class="col my-3">
+          <div class="col atmosphere-options text-center border-end">
+            <h5 class="fw-lighter text-muted">Humidity</h5>
+            <p class="fw-bold">93%</p>
+          </div>
+        </div>
+        <div class="col my-3">
+          <div class="col atmosphere-options text-center border-end">
+            <h5 class="fw-lighter text-muted">Pressure</h5>
+            <p class="fw-bold">34m/s</p>
+          </div>
+        </div>
+        <div class="col my-3">
+          <div class="col atmosphere-options text-center border-end">
+            <h5 class="fw-lighter text-muted">Cloud</h5>
+            <p class="fw-bold">34m/s</p>
+          </div>
+        </div>
+      </div>
+      <!-- signature -->
+      <div class="col text-center small text-muted pb-4">Created By Favour Okechukwu</div>
+    </div>
+
+    <script>
+      let currentDate = new Date().toJSON().slice(0, 10);
+
+      dateTxt = document.getElementById("date");
+      dateTxt.innerHTML = currentDate;
+
+      //   fetch(
+      //     "https://api.openweathermap.org/data/2.5/weather?q=London&appid=65b76bb90b435078a3c4f47765081f16"
+      //   )
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //       console.log(data);
+      //     });
+    </script>
+  </body>
+</html>
