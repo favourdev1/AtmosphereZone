@@ -16,60 +16,98 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
-
+<script src="vendor/twbs/bootstrap/js/dist/toast.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
   <body class="">
+
+  
+    
     <div class="vh-100 container">
-      <div class="container py-3 border-bottom">
-        <div class="col d-flex justify-content-between align-items-center">
-          <h3>Atmosphere Zone</h3>
-          <i class="bx bx-search bx-lg"></i>
+      <!-- nav -->
+
+      <div class="py-3 d-flex justify-content-between bg-white">
+        <a
+          id="nav-text"
+          class="ps-2 fs-3 fw-bold text-decoration-none text-dark"
+          href="#"
+        >
+          Atmosphere Zone
+        </a>
+        <!-- search Location -->
+        <div class="col">
+          <form id="weather-form" class="row g-3 justify-content-center" hidden>
+            <div
+              class="col-10 d-flex justify-content-between border-0 border-bottom"
+            >
+              <div class="col">
+                <input
+                  type="text"
+                  placeholder="Enter any City..."
+                  id="location"
+                  name="location"
+                  class="fs-5 border-0 w-100"
+                />
+                
+              </div>
+              <i class="bx bx-x bx-md pb-2" onclick="ShowSearch()"></i>
+
+            </div>
+          </form>
         </div>
+
+        <i
+          id="menuSearch"
+          class="bx bx-md bx-search"
+          onclick="ShowSearch()"
+        ></i>
       </div>
 
       <div class="col h-75 pt-5 temp-container">
         <div
-          class="h-100 row row-cols row-cols-1 row-cols-sm-2   justify-content-center"
+          class="h-100 row row-cols row-cols-1 row-cols-sm-2 justify-content-center"
         >
-        <!-- location and data container -->
-          <div class="col ">
+          <!-- location and data container -->
+          <div class="col">
             <div class="col text-center text-sm-start" py-3 px-3>
-             <div class="col">
-              <i class="bx bx-cloud bx-lg bg-secondary"  ></i>
-             </div>
-              <p id="date">DateTime</p>
-              <h1 class="fw-bolder">LAGOS,NIGERIA</h1>
-              <h5 class="text-secondary">OVERCAST CLOUD</h5>
+              <div class="col mt-md-5">
+                <img
+                  id="weatherImg"
+                  src="img/thunderstorm.png"
+                  class="img-fluid"
+                  alt="Weather Image"
+                  width="150"
+                />
+              </div>
              
+              <h4 id="weatherCondition" class="text-dark fw-bold">- -</h4>
+              <h1 id="cityName" class="fw-bolder">--</h1>
+
+              <p id="feelsLike" class="text-muted  fs-sm-4 fs-5 mt-1">--</p>
               
             </div>
           </div>
 
           <!-- degree container -->
           <div class="col text-center">
-            <h1 id="degree">31 &deg;</h1>
+            <h1 id="degree">--</h1>
             <div class="col mx-5">
               <div
-                class="row justify-content-around align-items-center  my-3 mt-sm-0 "
+                class="row justify-content-around align-items-center my-3 mt-sm-0"
               >
-                <div class="col text-end ">
-                 <div class="col pt-3">
-                     <small class=" text-secondary">Min</small>
-                    <p class="small fw-bold">34&deg;</p>
-                  
-                 </div>
-                   
-                </div>
-                <div style="width: 1px; height: 45px;"class=" p-0 border"></div>
-                <div class="col text-start  ">
+                <div class="col text-end">
                   <div class="col pt-3">
-                    <small class=" text-secondary">Max</small>
-                    <p class="small fw-bold">34 &deg;</p>
-             
+                    <small class="text-secondary">Min</small>
+                    <p id="tempMin" class="small fw-bold">--</p>
                   </div>
-                    
+                </div>
+                <div style="width: 1px; height: 45px" class="p-0 border"></div>
+                <div class="col text-start">
+                  <div class="col pt-3">
+                    <small class="text-secondary">Max</small>
+                    <p id="tempMax" class="small fw-bold">--</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,27 +119,27 @@
         <div class="col my-3">
           <div class="col atmosphere-options text-center border-end">
             <h5 class="fw-lighter text-muted">Wind</h5>
-            <p class="fw-bold">34m/s</p>
+            <p id="wind" class="fw-bold">--</p>
           </div>
         </div>
         <div class="col my-3">
           <div class="col atmosphere-options text-center border-end">
             <h5 class="fw-lighter text-muted">Humidity</h5>
-            <p class="fw-bold">93%</p>
+            <p id="humidity" class="fw-bold">--</p>
           </div>
         </div>
         <div class="col my-3">
           <div class="col atmosphere-options text-center border-end">
             <h5 class="fw-lighter text-muted">Pressure</h5>
-            <p class="fw-bold">34m/s</p>
+            <p id="pressure" class="fw-bold"></p>
           </div>
         </div>
-        <div class="col my-3">
+        <!-- <div class="col my-3">
           <div class="col atmosphere-options text-center border-end">
             <h5 class="fw-lighter text-muted">Cloud</h5>
             <p class="fw-bold">34m/s</p>
           </div>
-        </div>
+        </div> -->
       </div>
       <!-- signature -->
       <div class="col text-center small text-muted pb-4">
@@ -109,19 +147,38 @@
       </div>
     </div>
 
+
+    <!-- <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center" style="min-height: 200px;">
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+          <div class="toast-header">
+              <strong class="mr-auto">Bootstrap</strong>
+              <small class="text-muted">just now</small>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="toast-body">
+             This is a toast
+          </div>
+      </div>
+  </div>
+   -->
+
+    <script src="javascript/location.js"></script>
     <script>
-      let currentDate = new Date().toJSON().slice(0, 10);
+      function ShowSearch() {
+        weatherForm = document.getElementById("weather-form");
+        HeroText = document.getElementById("nav-text");
 
-      dateTxt = document.getElementById("date");
-      dateTxt.innerHTML = currentDate;
+        menuSearch = document.getElementById("menuSearch");
+        weatherForm.hidden = !weatherForm.hidden;
+        HeroText.hidden = !HeroText.hidden;
+        menuSearch.hidden = !menuSearch.hidden;
+      }
 
-      //   fetch(
-      //     "https://api.openweathermap.org/data/2.5/weather?q=London&appid=65b76bb90b435078a3c4f47765081f16"
-      //   )
-      //     .then((response) => response.json())
-      //     .then((data) => {
-      //       console.log(data);
-      //     });
+//       $(document).ready(function(){
+//       $("#snackbar").toast("show");
+//  });
     </script>
   </body>
 </html>
