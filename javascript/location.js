@@ -10,7 +10,8 @@ humidity = document.getElementById("humidity");
 pressure = document.getElementById("pressure");
 
 let form = document.getElementById("weather-form");
-
+var city =""
+var country_name =""
 GetCity();
 
 // get current city first
@@ -18,8 +19,8 @@ function GetCity() {
   fetch("https://ipapi.co/json/")
     .then((response) => response.json())
     .then((data) => {
-      var city = data.city;
-      var country_name = data.country_name;
+        city = data.city;
+       country_name = data.country_name;
       var country_code = data.country_code;
       cityName.innerHTML = city + ", " + country_name;
 
@@ -41,6 +42,8 @@ function GetWeather(city, country_code = "") {
   fetch(Request)
     .then((response) => response.json())
     .then((dataResponse) => {
+      cityName.innerHTML = city + ", " + country_name;
+
       weatherCondition.innerHTML =
         dataResponse.weather[0].description.toUpperCase();
       temp = dataResponse.main.temp;
@@ -91,5 +94,8 @@ form.addEventListener("submit", function (event) {
   event.preventDefault(); // prevent the form from submitting
 
   let formData = new FormData(form); // create a FormData object from the form
+  city = formData.get("location");
+   country_name=""
   GetWeather(formData.get("location"));
+  
 });
