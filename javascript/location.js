@@ -34,7 +34,7 @@ function GetWeather(city, country_code = "") {
   }
 
   var Request =
-    `http://api.openweathermap.org/data/2.5/weather?q=` +
+    `https://api.openweathermap.org/data/2.5/weather?q=` +
     city +
     country_code +
     `&appid=65b76bb90b435078a3c4f47765081f16&units=metric`;
