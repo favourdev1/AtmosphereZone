@@ -1,182 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atmosphere Zone</title>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Atmosphere Zone</title>
 
-    <link
-      rel="stylesheet"
-      href="vendor/twbs/bootstrap/dist/css/bootstrap.css"
-    />
-    <link
-      rel="stylesheet"
-      href="vendor/boxicons-2.1.4/boxicons-2.1.4/css/boxicons.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
-<script src="vendor/twbs/bootstrap/js/dist/toast.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
+        <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="vendor/boxicons-2.1.4/boxicons-2.1.4/css/boxicons.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="vendor/twbs/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="vendor/twbs/bootstrap/js/dist/toast.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
 
-  <body class="">
+    <body class="">
 
-  
-    
-    <div class="vh-100 container">
-      <!-- nav -->
 
-      <div class="py-3 d-flex justify-content-between bg-white">
-        <a
-          id="nav-text"
-          class="ps-2 fs-3 fw-bold text-decoration-none text-dark"
-          href="#"
-        >
-          Atmosphere Zone
-        </a>
-        <!-- search Location -->
-        <div class="col">
-          <form id="weather-form" class="row g-3 justify-content-center" hidden>
-            <div
-              class="col-10 d-flex justify-content-between border-0 border-bottom"
-            >
-              <div class="col">
-                <input
-                  type="text"
-                  placeholder="Enter any City..."
-                  id="location"
-                  name="location"
-                  class="fs-5 border-0 w-100"
-                />
-                
-              </div>
-              <i class="bx bx-x bx-md pb-2" onclick="ShowSearch()"></i>
-
-            </div>
-          </form>
-        </div>
-
-        <i
-          id="menuSearch"
-          class="bx bx-md bx-search"
-          onclick="ShowSearch()"
-        ></i>
-      </div>
-
-      <div class="col h-75 pt-5 temp-container">
         <div
-          class="h-100 row row-cols row-cols-1 row-cols-sm-2 justify-content-center"
-        >
-          <!-- location and data container -->
-          <div class="col">
-            <div class="col text-center text-sm-start" py-3 px-3>
-              <div class="col mt-md-5">
-                <img
-                  id="weatherImg"
-                  src="img/thunderstorm.png"
-                  class="img-fluid"
-                  alt="Weather Image"
-                  width="150"
-                />
-              </div>
-             
-              <h4 id="weatherCondition" class="text-dark fw-bold">- -</h4>
-              <h1 id="cityName" class="fw-bolder">--</h1>
+            class="vh-100 container">
+            <!-- nav -->
 
-              <p id="feelsLike" class="text-muted  fs-sm-4 fs-5 mt-1">--</p>
-              
-            </div>
-          </div>
+            <div class="py-3 d-flex justify-content-between bg-white">
+                <a id="nav-text" class="ps-2 fs-3 fw-bold text-decoration-none text-dark" href="#">
+                    Atmosphere Zone
+                </a>
+                <!-- search Location -->
+                <div class="col">
+                    <form id="weather-form" class="row g-3 justify-content-center" hidden>
+                        <div class="col-10 d-flex justify-content-between border-0 border-bottom">
+                            <div class="col">
+                                <input type="text" placeholder="Enter any City..." id="location" name="location" class="fs-5 border-0 w-100"/>
 
-          <!-- degree container -->
-          <div class="col text-center">
-            <h1 id="degree">--</h1>
-            <div class="col mx-5">
-              <div
-                class="row justify-content-around align-items-center my-3 mt-sm-0"
-              >
-                <div class="col text-end">
-                  <div class="col pt-3">
-                    <small class="text-secondary">Min</small>
-                    <p id="tempMin" class="small fw-bold">--</p>
-                  </div>
+                            </div>
+                            <i class="bx bx-x bx-md pb-2" onclick="ShowSearch()"></i>
+
+                        </div>
+                    </form>
                 </div>
-                <div style="width: 1px; height: 45px" class="p-0 border"></div>
-                <div class="col text-start">
-                  <div class="col pt-3">
-                    <small class="text-secondary">Max</small>
-                    <p id="tempMax" class="small fw-bold">--</p>
-                  </div>
-                </div>
-              </div>
+
+                <i id="menuSearch" class="bx bx-md bx-search" onclick="ShowSearch()"></i>
             </div>
-          </div>
+
+            <div class="col h-75 pt-5 temp-container">
+                <div
+                    class="h-100 row row-cols row-cols-1 row-cols-sm-2 justify-content-center">
+                    <!-- location and data container -->
+                    <div class="col">
+                        <div class="col text-center text-sm-start" py-3 px-3>
+                            <div class="col mt-md-5">
+                                <img id="weatherImg" src="img/thunderstorm.png" class="img-fluid" alt="Weather Image" width="150"/>
+                            </div>
+
+                            <h4 id="weatherCondition" class="text-dark fw-bold">- -</h4>
+                            <h1 id="cityName" class="fw-bolder">--</h1>
+
+                            <p id="feelsLike" class="text-muted  fs-sm-4 fs-5 mt-1">--</p>
+
+                        </div>
+                    </div>
+
+                    <!-- degree container -->
+                    <div class="col text-center">
+                        <h1 id="degree">--</h1>
+                        <div class="col mx-5">
+                            <div class="row justify-content-around align-items-center my-3 mt-sm-0">
+                                <div class="col text-end">
+                                    <div class="col pt-3">
+                                        <small class="text-secondary">Min</small>
+                                        <p id="tempMin" class="small fw-bold">--</p>
+                                    </div>
+                                </div>
+                                <div style="width: 1px; height: 45px" class="p-0 border"></div>
+                                <div class="col text-start">
+                                    <div class="col pt-3">
+                                        <small class="text-secondary">Max</small>
+                                        <p id="tempMax" class="small fw-bold">--</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-cols border-top pt-3 gx-2 gy-3">
+                <div class="col my-3">
+                    <div class="col atmosphere-options text-center border-end">
+                        <h5 class="fw-lighter text-muted">Wind</h5>
+                        <p id="wind" class="fw-bold">--</p>
+                    </div>
+                </div>
+                <div class="col my-3">
+                    <div class="col atmosphere-options text-center border-end">
+                        <h5 class="fw-lighter text-muted">Humidity</h5>
+                        <p id="humidity" class="fw-bold">--</p>
+                    </div>
+                </div>
+                <div class="col my-3">
+                    <div class="col atmosphere-options text-center border-end">
+                        <h5 class="fw-lighter text-muted">Pressure</h5>
+                        <p id="pressure" class="fw-bold"></p>
+                    </div>
+                </div>
+                <!-- <div class="col my-3">
+                          <div class="col atmosphere-options text-center border-end">
+                            <h5 class="fw-lighter text-muted">Cloud</h5>
+                            <p class="fw-bold">34m/s</p>
+                          </div>
+                        </div> -->
+            </div>
+            <!-- signature -->
+            <div class="col text-center small text-muted pb-4">
+                Created By Favour Okechukwu
+            </div>
         </div>
-      </div>
 
-      <div class="row row-cols border-top pt-3 gx-2 gy-3">
-        <div class="col my-3">
-          <div class="col atmosphere-options text-center border-end">
-            <h5 class="fw-lighter text-muted">Wind</h5>
-            <p id="wind" class="fw-bold">--</p>
-          </div>
+
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+            <div class="toast-header">
+                <strong class="mr-auto">Bootstrap</strong>
+                <small class="text-muted">just now</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                This is a toast
+            </div>
         </div>
-        <div class="col my-3">
-          <div class="col atmosphere-options text-center border-end">
-            <h5 class="fw-lighter text-muted">Humidity</h5>
-            <p id="humidity" class="fw-bold">--</p>
-          </div>
-        </div>
-        <div class="col my-3">
-          <div class="col atmosphere-options text-center border-end">
-            <h5 class="fw-lighter text-muted">Pressure</h5>
-            <p id="pressure" class="fw-bold"></p>
-          </div>
-        </div>
-        <!-- <div class="col my-3">
-          <div class="col atmosphere-options text-center border-end">
-            <h5 class="fw-lighter text-muted">Cloud</h5>
-            <p class="fw-bold">34m/s</p>
-          </div>
-        </div> -->
-      </div>
-      <!-- signature -->
-      <div class="col text-center small text-muted pb-4">
-        Created By Favour Okechukwu
-      </div>
-    </div>
+    </body>
+</html></div>--><script src="javascript/location.js"></script><script>
+function ShowSearch() {
+    weatherForm = document.getElementById("weather-form");
+    HeroText = document.getElementById("nav-text");
 
-
-
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-          <div class="toast-header">
-              <strong class="mr-auto">Bootstrap</strong>
-              <small class="text-muted">just now</small>
-              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <div class="toast-body">
-             This is a toast
-          </div>
-      </div>
-  </div>
-   -->
-
-    <script src="javascript/location.js"></script>
-    <script>
-      function ShowSearch() {
-        weatherForm = document.getElementById("weather-form");
-        HeroText = document.getElementById("nav-text");
-
-        menuSearch = document.getElementById("menuSearch");
-        weatherForm.hidden = !weatherForm.hidden;
-        HeroText.hidden = !HeroText.hidden;
-        menuSearch.hidden = !menuSearch.hidden;
-      }
-
-
-    </script>
-  </body>
-</html>
+    menuSearch = document.getElementById("menuSearch");
+    weatherForm.hidden = !weatherForm.hidden;
+    HeroText.hidden = !HeroText.hidden;
+    menuSearch.hidden = !menuSearch.hidden;
+}</script></body></html>
