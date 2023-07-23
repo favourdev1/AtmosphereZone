@@ -35,6 +35,9 @@ input[type="color"]:focus,
   outline: 0 none;
 }
 
+.dropdown-toggle:after{
+    display:none !important;
+}
 @media(min-width: 575px) {
     .atmosphere-options > h5 {
         font-size: 25px !important;
