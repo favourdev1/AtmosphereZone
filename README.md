@@ -18,7 +18,7 @@ Welcome to the AtmosphereZone! This is a simple and user-friendly weather applic
 ## Installation
 To use WeatherApp, follow these steps:
 
-1. Clone the repository from GitHub: `git clone https://github.com/your-username/weather-app.git`
+1. Clone the repository from GitHub: `[git clone https://github.com/favourdev1/AtmosphereZone.git]`
 2. Navigate to the project directory: `cd weather-app`
 3. Install the required dependencies: `composer install`
 4. Open your preferred web browser and access the app at `http://localhost:3000` (by default) or you spin up your xampp server.
