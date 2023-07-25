@@ -3,6 +3,9 @@
 ## Introduction
 Welcome to the AtmosphereZone! This is a simple and user-friendly weather application that provides real-time weather information for different locations around the world. With AtmosphereZone, you can stay up-to-date with the current weather conditions,  for any city you want to check.
 
+## Screenshot
+![image](https://github.com/favourdev1/AtmosphereZone/assets/65869008/cca0672b-d80c-4d76-bd11-24c28e48cb28)
+
 ## Features
 - Real-time Weather Data: Get access to the latest weather data from reputable sources to ensure accuracy.
 - Location-based Forecast: AtmosphereZone allows you to search for weather information in any city or location worldwide.
