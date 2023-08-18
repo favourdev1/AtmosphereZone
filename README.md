@@ -1,4 +1,4 @@
-# WeatherApp
+# Atmosphere Zone
 
 ## Introduction
 Welcome to the AtmosphereZone! This is a simple and user-friendly weather application that provides real-time weather information for different locations around the world. With AtmosphereZone, you can stay up-to-date with the current weather conditions,  for any city you want to check.
